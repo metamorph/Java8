@@ -43,7 +43,7 @@ public class LambdaTest {
             Worker w = l.workOnPersons();
             PersonRepository repo = new PersonRepository();
 
-            repo.getPersons().forEach((p) -> {
+            repo.getPeople().forEach((p) -> {
                 w.onEvent(p);
                 String out = stream.getAndClearBuffer();
                 String cmp = p.getName() + "(" + p.getAge() + ")";

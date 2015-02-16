@@ -25,7 +25,7 @@ public class StreamingTest {
     @Test
     public void testTransform() {
         Streaming s = new Streaming();
-        List<Person> persons = PersonRepository.getDefaultPersons();
+        List<Person> persons = PersonRepository.getDefaultPeople();
         List<String> emails = s.transformTest(persons);
 
         assertEquals(persons.size(), emails.size());
@@ -57,7 +57,7 @@ public class StreamingTest {
     @Test
     public void testReduce() {
         Streaming s = new Streaming();
-        String result = s.reduceToString(PersonRepository.getDefaultPersons());
+        String result = s.reduceToString(PersonRepository.getDefaultPeople());
         assertEquals("Jussi Karjalajnen;Jörgen Hult", result);
     }
 

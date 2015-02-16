@@ -56,6 +56,6 @@ public class Streaming {
 	public java.util.stream.Stream<Long> infinitePow2() {
 		//Todo
 		//implement an infinite stream which will produce the 2^n starting from 1.
-		return Stream.iterate(2L, n -> n * 2);
+		return null;
 	}
 }

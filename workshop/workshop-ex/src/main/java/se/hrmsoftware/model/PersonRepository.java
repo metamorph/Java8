@@ -5,18 +5,18 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * A repository to hold on to persons.
+ * A repository to hold on to people.
  * <p/>
  *
  * @author $Author: $
  */
 public class PersonRepository {
 
-    public static List<Person> getDefaultPersons() {
-        return new ArrayList<>(defaultPersons);
+    public static List<Person> getDefaultPeople() {
+        return new ArrayList<>(defaultPeople);
     }
 
-    private static final List<Person> defaultPersons = Arrays.asList(
+    private static final List<Person> defaultPeople = Arrays.asList(
             new Person("Jussi Karjalajnen", 89, "jussi@eisapeita.fi"),
             new Person("Urban Hult", 23, "urban@hult.se"),
             new Person("Jörgen Hult", 29, "jorgen@hult.se"),
@@ -24,23 +24,23 @@ public class PersonRepository {
             new Person("Åsa Råmson", 35, "slangpengarnaisjon@regeringen.se"));
 
 
-    //Mutatable list of persons in this repository.
-    private final List<Person> persons = new ArrayList<>(defaultPersons);
+    //Mutatable list of people in this repository.
+    private final List<Person> people = new ArrayList<>(defaultPeople);
 
     public PersonRepository() {
 
     }
 
-    public List<Person> getPersons () {
-        return new ArrayList<Person>(persons);
+    public List<Person> getPeople() {
+        return new ArrayList<Person>(people);
     }
 
     public void addPerson(Person p) {
-        persons.add(p);
+        people.add(p);
     }
 
     public void removePerson(Person p) {
-        persons.remove(p);
+        people.remove(p);
     }
 
 }
