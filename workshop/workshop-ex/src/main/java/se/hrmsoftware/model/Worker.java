@@ -4,6 +4,7 @@ import se.hrmsoftware.lambdas.Handler;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * A worker that you can registers person handlers on. Then Person objects can be sent to each
@@ -20,8 +21,8 @@ public class Worker {
         handlers.add(h);
     }
 
-    public void onEvent(Person person) {
-        handlers.forEach(h -> h.handle(person));
-    }
+	public String apply(Person person) {
+		return handlers.stream().map(h -> h.handle(person)).collect(Collectors.joining());
+	}
 }
 

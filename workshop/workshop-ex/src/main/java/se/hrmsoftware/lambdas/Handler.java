@@ -1,12 +1,11 @@
 package se.hrmsoftware.lambdas;
 
 /**
- * Todo: The description!
+ * A 'functional interface' this can transform a Person reference to a String.
  * <p>
  *
  * @author $Author: $
  */
 public interface Handler<Person> {
-
-    void handle(Person p);
+	String handle(Person p);
 }
