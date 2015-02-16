@@ -57,4 +57,6 @@ public class Streaming {
 		//implement an infinite stream which will produce the 2^n starting from 1.
 		return null;
 	}
+
+
 }

@@ -60,4 +60,5 @@ public class StreamingTest {
 		assertEquals(Arrays.asList(2L, 4L, 8L, 16L, 32L, 64L), result);
     }
 
+
 }
