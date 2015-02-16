@@ -18,8 +18,10 @@ public class LambdaTest {
 
 	@Test
 	public void testEmailGetterForNull() {
-		Person person = new Person("Nils", 33, null);
-		assertEquals("unknown@domain.com", Lambda.createEmailGetterWithNullFunc().apply(person));
+		assertEquals("unknown@domain.com", Lambda.createEmailGetterWithNullFunc()
+				.apply(new Person("Nils", 33, null)));
+		assertEquals("aaa@bbb.com", Lambda.createEmailGetterWithNullFunc()
+				.apply(new Person("Nils", 33, "aaa@bbb.com")));
 	}
 
     @Test
