@@ -1,0 +1,35 @@
+
+---------------------------------- Lambdas: ---------------------------------------------------
+
+* A lambda expression is a block of code with parameters.
+* Use a lambda expression whenever you want a block of code executed at a later point in time.
+* Lambda expressions can be converted to functional interfaces.
+* Lambda expressions can access effectively final variables from the enclosing scope.
+* Method and constructor references refer to methods or constructors without invoking them.
+* You can now add default and static methods to interfaces that provide concrete implementations.
+* You must resolve any conflicts between default methods from multiple interfaces.
+
+
+
+----------------------- Interfaces with default implementations: -------------------------------
+
+Default implementations of methods in interfaces!
+Static method declaration in interfaces!
+
+
+
+------------------------------ Streams --------------------------------------------------
+Both the existing Java notion of collections and the new notion of streams provide interfaces to
+a sequence of elements. So what’s the difference? In a nutshell, collections are about data and
+streams are about computations.
+
+Consider a movie stored on a DVD. This is a collection (perhaps of bytes or perhaps of frames—we
+don’t care which here) because it contains the whole data structure. Now consider watching the same
+video when it is being streamed over the internet. It is now a stream (of bytes or frames). The
+streaming video player needs to have downloaded only a few frames in advance of where the user is
+watching, so you can start displaying values from the beginning of the stream before most of the
+values in the stream have even been computed (consider streaming a live football game).
+
+
+
+
