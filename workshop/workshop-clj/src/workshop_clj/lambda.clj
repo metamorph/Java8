@@ -1,0 +1,1 @@
+(ns workshop-clj.lambda)
