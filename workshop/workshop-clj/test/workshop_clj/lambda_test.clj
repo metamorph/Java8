@@ -12,5 +12,7 @@
     (is (= "unknown@domain.com" 
            ((create-email-getter-with-nil) (model/create-person "Nils" 33 nil))))
     (is (= "abc@bbb.com"
-           ((create-email-getter-with-nil) (model/create-person "Nils" 33 "abc@bbb.com"))))))
+           ((create-email-getter-with-nil) (model/create-person "Nils" 33 "abc@bbb.com")))))
+  (testing "extract-age"
+    (is (= "89;35;" (test1 model/people)))))
 
