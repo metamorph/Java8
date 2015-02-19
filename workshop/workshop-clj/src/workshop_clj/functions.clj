@@ -3,16 +3,16 @@
 (defn negate 
   "Return a function that will swap the return value of the provided function (true -> false)" 
   [f] 
-  nil)
+  (complement f))
 
 (defn flip 
   "Returns a new function taking two argument in the flipped order
    of 'f'." 
   [f] 
-  nil)
+  (fn [a b] (f b a)))
 
 (defn compose
   "Return a function that is a composition of the two provided funcs"
   [f1 f2]
-  nil)
+  (comp f2 f1))
 
