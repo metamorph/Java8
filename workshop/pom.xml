@@ -33,6 +33,7 @@
     </build>
 
     <modules>
+        <module>lang-examples</module>
         <module>workshop-ex</module>
     </modules>
 
