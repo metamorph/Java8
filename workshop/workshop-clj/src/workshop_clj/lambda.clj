@@ -1,9 +1,10 @@
 (ns workshop-clj.lambda)
 
 (defn create-email-getter [] :email)
+;; (or (some->> f1 f2 f3) "default-value"
 (defn create-email-getter-with-nil [] 
-  (let [nil-safe (fnil str "unknown@domain.com")]
-    (fn [p] (-> p :email nil-safe))))
+  (fn [p] (or (-> p :email) "unknown@domain.com")))
+;; Compose - Join - Partial
 (defn test1 
   [people] 
   (let [age-filter #(> % 30)
