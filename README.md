@@ -10,7 +10,7 @@ Main hightlights taken from:
 > http://www.oracle.com/technetwork/java/javase/jdk7-relnotes-418459.html
 
 * IO / NIO.2
-    - File system API enhancements. Path class!
+    - File system API enhancements. Path och Files!
     
         >http://docs.oracle.com/javase/tutorial/essential/io/pathClass.html
 
