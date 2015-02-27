@@ -24,4 +24,7 @@ public class Functional {
 		// Return a function that is the result of 'composing' f and g.
 		return null;
 	}
+
+
+
 }
