@@ -4,12 +4,12 @@ import org.junit.Test;
 import se.hrmsoftware.model.Person;
 import se.hrmsoftware.model.PersonRepository;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static se.hrmsoftware.streams.Streaming.*;
@@ -17,7 +17,7 @@ import static se.hrmsoftware.streams.Streaming.*;
 public class StreamingTest {
 
 	@Test public void testCountLargerThan23() {
-		List<Integer> data = Arrays.asList(155, 2, 3, 4, 5, 23, 23, 23, 22, 25, 88, 19323, 121, 3, 5);
+		List<Integer> data = asList(155, 2, 3, 4, 5, 23, 23, 23, 22, 25, 88, 19323, 121, 3, 5);
 		assertEquals(5, countLargerThan23(data));
 	}
 
@@ -38,7 +38,7 @@ public class StreamingTest {
 	}
 
 	@Test public void testOddNumbers() {
-		List<Integer> oneToTwenty = Arrays.asList(1, 3, 5, 7, 9, 11, 13, 15, 17, 19);
+		List<Integer> oneToTwenty = asList(1, 3, 5, 7, 9, 11, 13, 15, 17, 19);
 
 		List<Integer> result = oddNumbersBetween(1, 20).collect(Collectors.toList());
 		result.sort(Integer::compare);
@@ -62,7 +62,7 @@ public class StreamingTest {
 
 	public void testReduce(Function<List<Person>, String> function) {
 		String result = function.apply(PersonRepository.getDefaultPeople());
-		assertEquals("Jussi Karjalajnen;Jörgen Hult", result);
+		assertEquals("Jussi Karjalajnen;Jörgen Hult;Jussi Karjalajnen jr;", result);
 	}
 
 	@Test public void testReduceFunctional() {
@@ -75,7 +75,32 @@ public class StreamingTest {
 
 	@Test public void testInifinity() {
 		List<Long> result = infinitePow2().limit(6).collect(Collectors.toList());
-		assertEquals(Arrays.asList(2L, 4L, 8L, 16L, 32L, 64L), result);
+		assertEquals(asList(2L, 4L, 8L, 16L, 32L, 64L), result);
+	}
+
+	@Test
+	public void testMapFunction() {
+		List<String> source = asList("foo", "baaz", "qwerty", ".");
+		List<Integer> expected = asList(3, 4, 6, 1);
+		Streaming2.Mapper<String, Integer> stringLen = String::length;
+		assertEquals(expected, Streaming2.doMap(source, stringLen));
+	}
+
+	@Test
+	public void testFilterFunction() {
+		List<String> source = asList("foo", "baaz", "qwerty", ".");
+		List<String> expected = asList("foo", ".");
+		Streaming2.Specification<String> isShorterThan4 = (s) -> s.length() < 4;
+		assertEquals(expected, Streaming2.doFilter(source, isShorterThan4));
+	}
+
+	@Test
+	public void testReducerFunction() {
+		List<String> source = asList("aaa", "bb", "c", "dddd");
+		Integer expected = 11;
+		Streaming2.Reducer<String, Integer> sumOfStringLengths = (result, value) -> result + value.length();
+		assertEquals(expected, Streaming2.doReduce(source, sumOfStringLengths, 1));
+
 	}
 
 }
