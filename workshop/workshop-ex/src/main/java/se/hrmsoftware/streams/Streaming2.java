@@ -25,14 +25,12 @@ public class Streaming2 {
 		return Collections.emptyList();
 	}
 
-	public static String sumOfOddNumbersBetweenImperatively(List<Person> persons) {
+	public static Integer sumOfOddNumbersBetweenImperatively(int min, int max) {
 		//Todo
-		//Using the oddNumbersBetween method above, create the sum of all odd numbers between the given
-		//min and max.
-
+		//Create the sum of all odd numbers from min to max.
 		//Do this imperatively, not using java8 features at all.
 
-		return null;
+		return -1;
 	}
 
 	public static String reduceToStringImperatively(List<Person> persons) {
@@ -44,6 +42,4 @@ public class Streaming2 {
 
 		return null;
 	}
-
-
 }
