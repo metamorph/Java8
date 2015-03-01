@@ -8,6 +8,9 @@ package se.hrmsoftware.java8.defenders;
  */
 public class Examples {
 
+	/**
+	 * An interface!
+	 */
 	public interface Service {
 		void ping();
 
@@ -20,7 +23,7 @@ public class Examples {
 	}
 
 	/**
-	 * "Multiple inheritance"?
+	 * Another interface implementing the same signature - "Multiple inheritance"?
 	 */
 	public interface OtherService {
 		default String hello(String name) {
@@ -29,6 +32,9 @@ public class Examples {
 	}
 
 
+	/**
+	 * Implement the interface.
+	 */
 	public static class ServiceImpl implements Service/*, OtherService*/ {
 		@Override
 		public void ping() {

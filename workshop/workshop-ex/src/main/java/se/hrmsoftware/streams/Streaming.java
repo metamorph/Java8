@@ -1,16 +1,9 @@
 package se.hrmsoftware.streams;
 
-import se.hrmsoftware.lambdas.Lambda;
 import se.hrmsoftware.model.Person;
 
-import java.awt.print.Book;
 import java.util.Collections;
 import java.util.List;
-import java.util.Spliterator;
-import java.util.function.Predicate;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
-import java.util.stream.Stream;
 
 /**
  * Explore the world of java 8 streams! And be on your way to functional programming in just a sec.
@@ -23,15 +16,13 @@ public class Streaming {
 		//Todo
 		//Using the stream api, count all elements larger than 23 in the list
 
-		return -1;
+		return -1l;
 	}
 
 	public static List<String> transformTest(List<Person> people) {
 		//Todo
 		//Using the result of the method Lambda#createEmailGetterFunc() above transform the given list of persons
 		// into a list of strings containing the email of each person in the list.
-		Lambda l = new Lambda();
-
 		return Collections.emptyList();
 	}
 
@@ -39,7 +30,9 @@ public class Streaming {
 		//Todo
 		//Using streams and functional style programming with lambdas create a stream
 		//of all the odd numbers between low and high.
+
 		return null;
+
 	}
 
 	public static int sumOfOddNumbersBetween(int min, int max) {
@@ -48,6 +41,7 @@ public class Streaming {
 		//min and max.
 
 		return -1;
+
 	}
 
 	public static String reduceToString(List<Person> persons) {
@@ -55,7 +49,7 @@ public class Streaming {
 		//given the list of persons, reduce them into a single string of the names provided
 		//that the name starts with a J, separate the names with ;.
 
-		return null;
+		return "";
 	}
 
 	public static java.util.stream.Stream<Long> infinitePow2() {
