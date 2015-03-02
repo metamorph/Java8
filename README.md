@@ -81,3 +81,5 @@ TODO: ADD EXAMPLE FOR THIS.
 >http://www.smashingmagazine.com/2014/07/02/dont-be-scared-of-functional-programming/
 
 >https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
+
+>https://twitter.com/mariofusco/status/571999216039542784/photo/1
