@@ -83,3 +83,6 @@ TODO: ADD EXAMPLE FOR THIS.
 >https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
 
 >https://twitter.com/mariofusco/status/571999216039542784/photo/1
+
+>http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html
+
