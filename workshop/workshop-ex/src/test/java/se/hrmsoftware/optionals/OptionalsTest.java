@@ -40,4 +40,13 @@ public class OptionalsTest extends TestCase {
 				new ProjectLeader(new Address(null)))));
 	}
 
+	@Test
+	public void testOptionalStringLength() {
+		assertEquals("default", Optionals.checkLengthString(null));
+		assertEquals("default", Optionals.checkLengthString("abc"));
+		assertEquals("default", Optionals.checkLengthString("abcde"));
+		assertEquals("default", Optionals.checkLengthString(" abcde "));
+		assertEquals("ABCDEF", Optionals.checkLengthString("abcdef"));
+	}
+
 }

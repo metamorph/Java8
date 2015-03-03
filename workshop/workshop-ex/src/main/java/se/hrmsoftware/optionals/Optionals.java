@@ -27,4 +27,15 @@ public class Optionals {
 						.map(ProjectLeader::getAddress)
 						.map(Address::getStreet).orElse("N/A"));
 	}
+
+	public static String checkLengthString(String s) {
+		// TODO:
+		// If the provided string 's' is null or its length is less then 5 (starting/ending whitespaces not counted)
+		// return 'default'. Otherwise return the string in UPPER-CASE.
+		return Optional.ofNullable(s)
+				.map(String::trim)
+				.filter(str -> str.length() > 5)
+				.map(String::toUpperCase)
+				.orElse("default");
+	}
 }
