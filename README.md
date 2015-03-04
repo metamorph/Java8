@@ -86,3 +86,9 @@ TODO: ADD EXAMPLE FOR THIS.
 
 >http://www.oracle.com/technetwork/articles/java/java8-optional-2175753.html
 
+>http://www.slideshare.net/mariofusco/monadic-java
+
+>http://www.concretepage.com/java/jdk-8/java-8-optional-example-avoid-nullpointerexception
+
+>http://blog.jhades.org/java-8-how-to-use-optional/
+
