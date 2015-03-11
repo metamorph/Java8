@@ -92,3 +92,4 @@ TODO: ADD EXAMPLE FOR THIS.
 
 >http://blog.jhades.org/java-8-how-to-use-optional/
 
+>http://javarevisited.blogspot.se/2015/03/20-examples-of-date-and-time-api-from-Java8.html
