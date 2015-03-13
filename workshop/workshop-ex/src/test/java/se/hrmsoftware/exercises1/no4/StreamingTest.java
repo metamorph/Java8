@@ -7,7 +7,7 @@ import java.util.List;
 
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
-import static se.hrmsoftware.exercises1.no4.StreamingVladde.*;
+import static se.hrmsoftware.exercises1.no4.Streaming.*;
 
 /**
  *

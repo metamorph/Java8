@@ -6,7 +6,7 @@ import java.util.function.IntSupplier;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class Streaming4 {
+public class Streaming {
 	public static List<Integer> flatIt(Stream<List<Integer>> stream) {
 		return null;
 	}

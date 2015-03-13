@@ -5,7 +5,7 @@ import java.util.List;
 
 /**
  */
-public class StreamingVladde {
+public class Streaming {
 
     public static List<Person> getPeopleBornBetween(List<Person> people, int minYear, int maxYear) {
         //Todo

@@ -17,34 +17,34 @@ public class StreamingTest {
 	public void testFlatIt() {
 		Stream<List<Integer>> stream = Stream.of(Arrays.asList(12), Arrays.asList(2), Arrays.asList(66),
 				Arrays.asList(4), Arrays.asList(9), Arrays.asList(1));
-		assertEquals(Arrays.asList(12, 2, 66, 4, 9, 1), Streaming4.flatIt(stream));
+		assertEquals(Arrays.asList(12, 2, 66, 4, 9, 1), Streaming.flatIt(stream));
 	}
 
 	@Test
 	public void testSumIt() {
 		Stream<List<Integer>> stream = Stream.of(Arrays.asList(12), Arrays.asList(2), Arrays.asList(66),
 				Arrays.asList(4), Arrays.asList(9), Arrays.asList(1));
-		assertEquals(12 + 2 + 66 + 4 + 9 + 1, Streaming4.sumIt(stream));
+		assertEquals(12 + 2 + 66 + 4 + 9 + 1, Streaming.sumIt(stream));
 	}
 
 	@Test
 	public void testSupplyMe() {
 		assertEquals(10,
-				IntStream.generate(Streaming4.supplyMeWithRandomInts()).skip(1000).limit(10).summaryStatistics()
+				IntStream.generate(Streaming.supplyMeWithRandomInts()).skip(1000).limit(10).summaryStatistics()
 						.getCount());
 	}
 
 	@Test
 	public void testGetFirst() {
 		Supplier<Stream<Integer>> streamSupplier = () -> Stream.of(12, 2, 66, 4, 9, 1);
-		assertEquals(Integer.valueOf(66), Streaming4.getFirst(streamSupplier.get(), i -> i == 66).get());
-		assertFalse(Streaming4.getFirst(streamSupplier.get(), i -> i == 33).isPresent());
+		assertEquals(Integer.valueOf(66), Streaming.getFirst(streamSupplier.get(), i -> i == 66).get());
+		assertFalse(Streaming.getFirst(streamSupplier.get(), i -> i == 33).isPresent());
 	}
 
 	@Test
 	public void testContains() {
 		Supplier<Stream<Integer>> streamSupplier = () -> Stream.of(12, 2, 66, 4, 9, 1);
-		assertTrue(Streaming4.contains(streamSupplier.get(), 0, 3, 4));
-		assertFalse(Streaming4.contains(streamSupplier.get(), 0, 3, 67));
+		assertTrue(Streaming.contains(streamSupplier.get(), 0, 3, 4));
+		assertFalse(Streaming.contains(streamSupplier.get(), 0, 3, 67));
 	}
 }
