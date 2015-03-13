@@ -3,6 +3,7 @@ package se.hrmsoftware.streams;
 import se.hrmsoftware.model.Person;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -22,7 +23,7 @@ public class Streaming3 {
 		//Todo
 		// Get hold of the statistics of the names of the given people. I.e. given the names of all the people count
 		// max min, avg. and sum of all the chars in the names.
-		return null;
+		return people.collect(Collectors.summarizingInt(p -> p.getName().length()));
 
 	}
 
@@ -32,14 +33,15 @@ public class Streaming3 {
 		//has an age that is within the given min and max age (inclusive), with that it follows that the other
 		//list should have all people that doesn't have an age within the given limits.
 
-		return null;
+		return people.collect(Collectors.partitioningBy(p -> p.getAge() >= minAge && p.getAge() <= maxAge));
 	}
 
 	public static Map<Integer, List<Person>> groupPeopleByAge(Stream<Person> people) {
 		//Todo
 		//Create a mapping of the people in the stream to their age.
 
-		 return null;
+
+		 return people.collect(Collectors.groupingBy(Person::getAge));
 	}
 
 
@@ -47,6 +49,6 @@ public class Streaming3 {
 		//Todo
 		//Sort the stream according to age and return a list of the stream.
 
-		return null;
+		return people.sorted((p, p1) -> Integer.compare(p.getAge(), p1.getAge())).collect(Collectors.toList());
 	}
 }

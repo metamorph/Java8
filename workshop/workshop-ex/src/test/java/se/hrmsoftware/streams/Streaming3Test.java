@@ -8,6 +8,7 @@ import java.util.*;
 import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static se.hrmsoftware.model.PersonRepository.getDefaultPeople;
+
 import static se.hrmsoftware.streams.Streaming3.*;
 
 @SuppressWarnings("ALL") public class Streaming3Test {
@@ -30,9 +31,11 @@ import static se.hrmsoftware.streams.Streaming3.*;
 	public void testNameLengthStats() {
 		IntSummaryStatistics intStats = calculateNameLengthStats(getDefaultPeople().stream());
 
+		getDefaultPeople().stream().forEach(p -> System.out.println(p.getName().length()));
+
 		assertEquals("Unexpected max length", 20, intStats.getMax());
-		assertEquals("Unexpected min length", 9, intStats.getMax());
-		assertEquals("Unexpected average length", 12, (int) Math.floor(intStats.getAverage()));
+		assertEquals("Unexpected min length", 9, intStats.getMin());
+		assertEquals("Unexpected average length", 13, (int) Math.floor(intStats.getAverage()));
 		assertEquals("Unexpected count", 6, intStats.getCount());
 	}
 
@@ -44,7 +47,7 @@ import static se.hrmsoftware.streams.Streaming3.*;
 		Map<Boolean, List<Person>> p_20_25 = partitionByAgeBetween(getDefaultPeople().stream(), 20, 25);
 
 		List<Person> personsBetween20_25 = p_20_25.get(true);
-		List<Person> personsNot20_25 = p_20_25.get(true);
+		List<Person> personsNot20_25 = p_20_25.get(false);
 
 		assertEquals(personsBetween20_25.size(), 3);
 
