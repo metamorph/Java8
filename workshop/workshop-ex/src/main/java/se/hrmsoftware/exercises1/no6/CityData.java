@@ -1,5 +1,6 @@
 package se.hrmsoftware.exercises1.no6;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -15,6 +16,10 @@ public class CityData {
 		this.name = name;
 		this.population = population;
 		this.temperatures = Collections.unmodifiableList(temperatures); // Maintain that immutability!
+	}
+
+	public CityData(String name, int population, Integer... temperatures) {
+		this(name, population, Arrays.asList(temperatures));
 	}
 
 	public String getName() {
