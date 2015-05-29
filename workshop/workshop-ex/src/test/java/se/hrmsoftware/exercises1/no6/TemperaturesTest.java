@@ -26,7 +26,7 @@ public class TemperaturesTest extends TestCase {
 				new CityData("Vislanda", 2000, -5, 5, 7, 12, 17, 22, 21, 18, 6, 2),
 				new CityData("Lammhult", 1300, -0, 1, 3, 7, 12, 18, 13, 8, -2, -6),
 				new CityData("Stockholm", 9000000, -4, -3, 2, 3, 15, 21, 22, 23, 2, 1, 3, 0));
-		Set<ChartEntry> output = Temperatures.calculateAverageTemperatureByPopulation(input);
+		Set<ChartEntry> output = Temperatures.calculateAverageTemperaturByPopulation(input);
 
 		// Check data.
 		assertEquals(4, output.size());
@@ -35,4 +35,6 @@ public class TemperaturesTest extends TestCase {
 		assertEquals(5.4d, averageForPopulation(output, 1300), 0.1);
 		assertEquals(7.08d, averageForPopulation(output, 9000000), 0.1);
 	}
+
+
 }
